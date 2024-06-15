@@ -4,3 +4,4 @@ black
 ipython
 click
 ipdb
+pytest-cov
