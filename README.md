@@ -1,3 +1,5 @@
+[![CI](https://github.com/niikun/function_from_zero/actions/workflows/main.yml/badge.svg)](https://github.com/niikun/function_from_zero/actions/workflows/main.yml)
+
 # function_from_zero
 function_from_zero
 
