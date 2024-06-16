@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 from mylib.logistics import distance, travel_time
 import click
-"""
-This is a simple CLI tool to calculate the distance between two cities 
-and the time it takes to travel between them at a given speed
-"""
+
 
 @click.group()
 def cli():

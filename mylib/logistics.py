@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-This module deals logistics and calculates distances between two points.
-and the time it takes to traval between two points and other logistics related questions
-for a given speed.
-"""
-from geopy.distance import distance
+
 
 #build a list of 10 cities in Japan and their coordinates
 cities = {
