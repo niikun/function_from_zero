@@ -1,4 +1,7 @@
 from mylib.calc import add, sub, mul, div
+from calCli import cli
+from click.testing import CliRunner
+
 import pytest
 
 
@@ -29,4 +32,43 @@ def test_div():
         div(2, 0)
     with pytest.raises(ValueError, match="Cannot divide by zero!"):
         div(0, 0)
+
+#test the cli function
+
+def test_cli_add():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["add", "2", "3"])
+    assert result.exit_code == 0
+    assert result.output == "5.0\n"
+
+def test_cli_sub():
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["sub", "2", "3"])
+    assert result.exit_code == 0
+    assert result.output == "-1.0\n"
+
+def test_cli_mul():
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["mul", "2", "3"])
+    assert result.exit_code == 0
+    assert result.output == "6.0\n"
+
+def test_cli_div():
+    
+    runner = CliRunner()
+    result = runner.invoke(cli, ["div", "2", "3"])
+    assert result.exit_code == 0
+    assert result.output == "0.6666666666666666\n"
+
+    result = runner.invoke(cli, ["div", "2", "0"])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, ValueError)
+    assert str(result.exception) == "Cannot divide by zero!"
+
+    result = runner.invoke(cli, ["div", "0", "0"])
+    assert result.exit_code == 1
+    assert isinstance(result.exception, ValueError)
+    assert str(result.exception) == "Cannot divide by zero!"
 
