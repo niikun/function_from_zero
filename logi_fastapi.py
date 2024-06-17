@@ -30,13 +30,11 @@ async def get_distance(city1: str, city2: str):
 @app.get("/hours/{city1}/{city2}/{speed}")
 async def get_hours(city1: str, city2: str, speed: int):
     """
-    Get the hours between two cities
+    Get the hours to travel between two cities
     """
     dist = distance(city1, city2)
     hours = dist / speed
     return {"hours": hours}
-
-@app.post("/distance")
 
 
 if __name__ == '__main__':
