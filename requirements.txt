@@ -6,3 +6,5 @@ click
 ipdb
 pytest-cov
 geopy
+fastapi
+uvicorn[standard]
