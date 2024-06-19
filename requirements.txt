@@ -9,3 +9,4 @@ geopy
 fastapi
 uvicorn[standard]
 wikipedia
+git+https://github.com/LIAAD/yake
