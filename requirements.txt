@@ -5,6 +5,7 @@ ipython
 click
 ipdb
 pytest-cov
+pydantic
 geopy
 fastapi
 uvicorn[standard]

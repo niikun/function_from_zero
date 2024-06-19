@@ -19,6 +19,14 @@ def get_wiki_pages(page: str):
     return wikipedia.page(page)
 
 
+def search_wiki_pages(query: str):
+    """
+    Search wikipedia pages for a query
+    """
+    return wikipedia.search(query)
+
+
+
 # return a keyword of a wikipedia page
 
 def get_keywords(page: str):

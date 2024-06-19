@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 import uvicorn
 from mylib.logistics import distance
+from mylib.wiki import get_keywords
+from pydantic import BaseModel
 
 app = FastAPI()
+
+class City(BaseModel):
+    name: str
 
 @app.get("/")
 async def root():
@@ -35,6 +40,14 @@ async def get_hours(city1: str, city2: str, speed: int):
     dist = distance(city1, city2)
     hours = dist / speed
     return {"hours": hours}
+
+@app.post("/keywords")
+async def get_wiki_keywords(city: City):
+    """
+    Get the keywords of a wikipedia page
+    """
+    keywords = get_keywords(city.name)
+    return {"keywords": keywords}
 
 
 if __name__ == '__main__':
