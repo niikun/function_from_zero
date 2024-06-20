@@ -10,5 +10,8 @@ lint:
 	
 test:
 	python -m pytest -vv --cov=calCli.py --cov=mylib test/test_*.py
+
+container-lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
 	
 all: install lint test
