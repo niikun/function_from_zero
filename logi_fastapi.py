@@ -11,7 +11,7 @@ class City(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Hello Duke"}
+    return {"message": "Hello niikun"}
 
 
 @app.get("/add/{num1}/{num2}")
